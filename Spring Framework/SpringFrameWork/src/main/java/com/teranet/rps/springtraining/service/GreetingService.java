@@ -1,5 +1,6 @@
 package com.teranet.rps.springtraining.service;
 
+import com.teranet.rps.springtraining.aspect.Loggable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ public class GreetingService {
         super();
     }
 
+    @Loggable
     public String getGreeting(String name){
     return myGreeting + " " +name;
     }
