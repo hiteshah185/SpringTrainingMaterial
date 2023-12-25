@@ -11,15 +11,17 @@ public class OutputService {
     private String appName;
 
     private final GreetingService greetingService;
+    private final TimeService timeService;
 
     @Autowired
-    public OutputService(GreetingService greetingService) {
+    public OutputService(GreetingService greetingService, TimeService timeService) {
         this.greetingService = greetingService;
+        this.timeService = timeService;
     }
     
     public void getOutput(){
     StringBuilder message = new StringBuilder();
-    message.append(greetingService.getGreeting(appName));
+    message.append(this.timeService.getCurrentTime()+": "+greetingService.getGreeting(appName));
     System.out.println(message.toString());
     }
 }
