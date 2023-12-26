@@ -1,5 +1,8 @@
 package com.teranet.rps.springtraining.designpatterns.builder;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ContactCardBuilder {
     private String firstName;
     private String lastName;

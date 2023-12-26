@@ -6,6 +6,9 @@ public class ContactCard {
     private String workEmail;
     private String department;
 
+    public ContactCard() {
+    }
+
     public ContactCard(String firstName, String lastName, String workEmail, String department) {
         this.firstName = firstName;
         this.lastName = lastName;
