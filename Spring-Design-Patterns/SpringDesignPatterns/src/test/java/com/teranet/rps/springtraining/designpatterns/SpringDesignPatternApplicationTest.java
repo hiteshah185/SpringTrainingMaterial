@@ -1,5 +1,7 @@
 package com.teranet.rps.springtraining.designpatterns;
 
+import com.teranet.rps.springtraining.designpatterns.prototype.Bottle;
+import com.teranet.rps.springtraining.designpatterns.service.EmployeeService;
 import com.teranet.rps.springtraining.designpatterns.singleton.Apple;
 import com.teranet.rps.springtraining.designpatterns.singleton.GreenApple;
 import org.junit.Assert;
@@ -16,6 +18,10 @@ public class SpringDesignPatternApplicationTest {
     GreenApple greenApple1;
     @Autowired
     GreenApple greenApple2;
+    @Autowired
+    Bottle waterBottle;
+    @Autowired
+    Bottle wineBottle;
 
     @Test
     public void testSingletons(){
@@ -25,5 +31,9 @@ public class SpringDesignPatternApplicationTest {
         Assert.assertSame(apple1,apple2);
         Assert.assertNotNull(greenApple1);
         Assert.assertSame(greenApple1,greenApple2);
+    }
+    @Test
+    public void testPrototypes(){
+        Assert.assertNotSame(waterBottle,wineBottle);
     }
 }
