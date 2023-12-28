@@ -7,4 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeRpo extends JpaRepository<Employee,Long> {
+    Employee findByFirstName(String firstName);
+    @Override
+    boolean existsById(Long aLong);
 }

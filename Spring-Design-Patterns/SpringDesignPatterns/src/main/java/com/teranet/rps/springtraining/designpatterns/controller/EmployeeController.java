@@ -15,33 +15,36 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = {"*"})
-@RequestMapping("/api/")
+@RequestMapping("/api/employee/")
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
     @Autowired
     RestTemplate restTemplate;
+    @PostMapping("new")
+    public ResponseEntity postNewEmployee(@RequestBody Employee employee){
+        return employeeService.newEmployee(employee);
+    }
     @GetMapping("testPoint")
     public ResponseEntity getResponse(){
         return employeeService.getNewEmployee();
     }
-    @GetMapping("employees")
-    public List<Employee> getEmployeesList(){
-        List<Employee> employees = new ArrayList<>();
-        Employee newEmployee =  new Employee();
-        newEmployee.setFirstName("Kailas");
-        newEmployee.setEmail("kailas@mail.com");
-        newEmployee.setDomain("java");
-        employees.add(newEmployee);
-        return employees;
+    @GetMapping("all")
+    public ResponseEntity getEmployeesList(){
+        return employeeService.getAllEmployee();
     }
-    @GetMapping("employee/{id}")
-    public ResponseEntity getEmployeeById(@PathVariable Long id){
+    @GetMapping("get/{id}")
+    public ResponseEntity getEmployeeById(@PathVariable long id){
         return employeeService.getEmployeeFromId(id);
     }
 
-    @GetMapping("employeeContact/{id}")
-    public ContactCard getEmployeeContactById(@PathVariable Long id){
+    @PutMapping("update/{id}")
+    public ResponseEntity updateEmployeeDetails(@PathVariable long id, @RequestBody Employee employee){
+        return employeeService.updateEmployee(id,employee);
+    }
+
+    @GetMapping("employeeContact/{idy}")
+    public ContactCard getEmployeeContactById(@PathVariable("idy") long id){
         Employee employee = this.restTemplate
                 .getForEntity("http://localhost:8080/api/employee/{id}",
                         Employee.class,id).getBody();
@@ -49,6 +52,10 @@ public class EmployeeController {
                 .setFirstName(employee.getFirstName())
                 .setWorkEmail(employee.getEmail())
                 .setDepartment("Development").buildContactCard());
+    }
+    @DeleteMapping("delete/{id}")
+    public ResponseEntity deleteEmployee(@PathVariable("id") long id){
+        return employeeService.deleteEmployee(id);
     }
 
 
