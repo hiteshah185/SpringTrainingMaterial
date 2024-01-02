@@ -10,6 +10,7 @@
         <property name="author" value="Hitesh"></property>
         <property name="publisher" value="TRV"></property>
         <property name="nameSlip" ref="NameSlip"></property>
+        <constructor-arg value="500"></constructor-arg>
     </bean>
     <bean id="NameSlip" class="com.teranet.rps.springtraining.beans.NameSlip">
     </bean>

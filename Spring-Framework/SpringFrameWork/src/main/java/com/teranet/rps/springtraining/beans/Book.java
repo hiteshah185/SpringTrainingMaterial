@@ -7,6 +7,10 @@ public class Book {
     private int numberOfPages;
     private NameSlip nameSlip;
 
+    public Book(int numberOfPages) {
+        this.numberOfPages = numberOfPages;
+    }
+
     public Book(String type, String author, String publisher, int numberOfPages, NameSlip nameSlip) {
         this.type = type;
         this.author = author;
