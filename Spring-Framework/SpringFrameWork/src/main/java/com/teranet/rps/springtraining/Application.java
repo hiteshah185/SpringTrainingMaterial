@@ -1,5 +1,6 @@
 package com.teranet.rps.springtraining;
 
+import com.teranet.rps.springtraining.beans.Book;
 import com.teranet.rps.springtraining.beans.Pen;
 import com.teranet.rps.springtraining.config.ApplicationConfig;
 import com.teranet.rps.springtraining.service.OutputService;
@@ -15,14 +16,16 @@ public class Application {
         ApplicationContext contextForUSA = new AnnotationConfigApplicationContext(ApplicationConfig.class);
         BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));//XML based
         Pen myCurrentPen = (Pen)factory.getBean("pen");
-        myCurrentPen.setColor("Blue");
         Pen myNewPen = (Pen)factory.getBean("pen");
+        Book magazine = (Book)factory.getBean("book");
+        myCurrentPen.setColor("Blue");
         myNewPen.setColor("Black");
         OutputService outputService = context.getBean(OutputService.class);
         System.out.println("<---Teranet RPS Spring Training: Main Class --->");
         outputService.getOutput();
         myCurrentPen.write();
         myNewPen.write();
+        magazine.toString();
 
     }
 }

@@ -6,5 +6,9 @@
 
     <!-- bean definitions here -->
     <bean id="pen" class="com.teranet.rps.springtraining.beans.Pen" scope="prototype"></bean>
+    <bean id="book" class="com.teranet.rps.springtraining.beans.Book">
+        <property name="author" value="Hitesh"></property>
+        <property name="publisher" value="TRV"></property>
+    </bean>
 
 </beans>
