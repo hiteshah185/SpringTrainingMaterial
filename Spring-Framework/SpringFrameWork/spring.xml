@@ -5,6 +5,6 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="pen" class="com.teranet.rps.springtraining.beans.Pen"></bean>
+    <bean id="pen" class="com.teranet.rps.springtraining.beans.Pen" scope="prototype"></bean>
 
 </beans>

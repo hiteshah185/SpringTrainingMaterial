@@ -15,10 +15,14 @@ public class Application {
         ApplicationContext contextForUSA = new AnnotationConfigApplicationContext(ApplicationConfig.class);
         BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));//XML based
         Pen myCurrentPen = (Pen)factory.getBean("pen");
+        myCurrentPen.setColor("Blue");
+        Pen myNewPen = (Pen)factory.getBean("pen");
+        myNewPen.setColor("Black");
         OutputService outputService = context.getBean(OutputService.class);
         System.out.println("<---Teranet RPS Spring Training: Main Class --->");
         outputService.getOutput();
         myCurrentPen.write();
+        myNewPen.write();
 
     }
 }

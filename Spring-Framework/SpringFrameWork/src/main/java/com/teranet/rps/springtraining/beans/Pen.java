@@ -16,7 +16,7 @@ public class Pen {
     public Pen() {
     }
     public void write(){
-        System.out.println("Writing with pen....");
+        System.out.println("Writing with "+this.color+ " pen....");
     }
 
     public String getCompany() {
