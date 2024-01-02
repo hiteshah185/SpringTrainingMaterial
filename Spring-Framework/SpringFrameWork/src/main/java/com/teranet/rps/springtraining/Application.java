@@ -1,6 +1,7 @@
 package com.teranet.rps.springtraining;
 
 import com.teranet.rps.springtraining.beans.Book;
+import com.teranet.rps.springtraining.beans.NameSlip;
 import com.teranet.rps.springtraining.beans.Pen;
 import com.teranet.rps.springtraining.config.ApplicationConfig;
 import com.teranet.rps.springtraining.service.OutputService;
@@ -18,6 +19,7 @@ public class Application {
         Pen myCurrentPen = (Pen)factory.getBean("pen");
         Pen myNewPen = (Pen)factory.getBean("pen");
         Book magazine = (Book)factory.getBean("book");
+        NameSlip nameSlip = (NameSlip)factory.getBean("NameSlip");
         myCurrentPen.setColor("Blue");
         myNewPen.setColor("Black");
         OutputService outputService = context.getBean(OutputService.class);
@@ -26,6 +28,7 @@ public class Application {
         myCurrentPen.write();
         myNewPen.write();
         System.out.println(magazine.toString());
+        nameSlip.toString();
 
     }
 }

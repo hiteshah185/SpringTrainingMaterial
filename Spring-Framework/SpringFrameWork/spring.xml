@@ -12,7 +12,8 @@
         <property name="nameSlip" ref="NameSlip"></property>
         <constructor-arg value="500"></constructor-arg>
     </bean>
-    <bean id="NameSlip" class="com.teranet.rps.springtraining.beans.NameSlip">
+    <bean id="NameSlip" class="com.teranet.rps.springtraining.beans.NameSlip" autowire="byType">
     </bean>
+    <bean id="shape" class="com.teranet.rps.springtraining.beans.Shape"></bean>
 
 </beans>

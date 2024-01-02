@@ -4,12 +4,12 @@ public class NameSlip {
     private String name;
     private String subject;
     private String address;
-    private String shape;
+    private Shape shape;
 
     public NameSlip() {
     }
 
-    public NameSlip(String name, String subject, String address, String shape) {
+    public NameSlip(String name, String subject, String address, Shape shape) {
         this.name = name;
         this.subject = subject;
         this.address = address;
@@ -40,11 +40,11 @@ public class NameSlip {
         this.address = address;
     }
 
-    public String getShape() {
+    public Shape getShape() {
         return shape;
     }
 
-    public void setShape(String shape) {
+    public void setShape(Shape shape) {
         this.shape = shape;
     }
 }
