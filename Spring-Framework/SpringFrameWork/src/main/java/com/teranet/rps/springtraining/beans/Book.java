@@ -5,12 +5,14 @@ public class Book {
     private String author;
     private String publisher;
     private int numberOfPages;
+    private NameSlip nameSlip;
 
-    public Book(String type, String author, String publisher, int numberOfPages) {
+    public Book(String type, String author, String publisher, int numberOfPages, NameSlip nameSlip) {
         this.type = type;
         this.author = author;
         this.publisher = publisher;
         this.numberOfPages = numberOfPages;
+        this.nameSlip = nameSlip;
     }
 
     public Book() {
@@ -50,6 +52,14 @@ public class Book {
         this.numberOfPages = numberOfPages;
     }
 
+    public NameSlip getNameSlip() {
+        return nameSlip;
+    }
+
+    public void setNameSlip(NameSlip nameSlip) {
+        this.nameSlip = nameSlip;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -57,6 +67,7 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", publisher='" + publisher + '\'' +
                 ", numberOfPages=" + numberOfPages +
+                ", nameSlip=" + nameSlip +
                 '}';
     }
 }

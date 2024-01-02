@@ -25,7 +25,7 @@ public class Application {
         outputService.getOutput();
         myCurrentPen.write();
         myNewPen.write();
-        magazine.toString();
+        System.out.println(magazine.toString());
 
     }
 }

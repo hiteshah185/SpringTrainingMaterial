@@ -9,6 +9,9 @@
     <bean id="book" class="com.teranet.rps.springtraining.beans.Book">
         <property name="author" value="Hitesh"></property>
         <property name="publisher" value="TRV"></property>
+        <property name="nameSlip" ref="NameSlip"></property>
+    </bean>
+    <bean id="NameSlip" class="com.teranet.rps.springtraining.beans.NameSlip">
     </bean>
 
 </beans>
