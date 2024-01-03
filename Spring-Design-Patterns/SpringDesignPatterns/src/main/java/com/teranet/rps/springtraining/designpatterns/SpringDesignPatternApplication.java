@@ -6,11 +6,13 @@ import com.teranet.rps.springtraining.designpatterns.models.Employee;
 import com.teranet.rps.springtraining.designpatterns.prototype.Bottle;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
+import org.springframework.core.SpringProperties;
 import org.springframework.web.client.RestTemplate;
-
+//@EnableConfigurationProperties(SpringProperties.class)
 @SpringBootApplication
 public class SpringDesignPatternApplication {
     public static void main(String[] args) {
