@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -46,6 +48,14 @@ public class EmployeeService {
         }
         catch (Exception ex){
             return new ResponseEntity("Delete Failed",HttpStatus.CONFLICT);
+        }
+    }
+    public ResponseEntity getEmployeeByCoreDomain(String coreDomain){
+        try{
+            Collection<Employee> employees = employeeRpo.findEmployeesByCoreDomain(coreDomain);
+            return new ResponseEntity(employees,HttpStatus.OK);
+        }catch (Exception ex){
+            return new ResponseEntity("Something Went wrong!",HttpStatus.BAD_REQUEST);
         }
     }
 }
