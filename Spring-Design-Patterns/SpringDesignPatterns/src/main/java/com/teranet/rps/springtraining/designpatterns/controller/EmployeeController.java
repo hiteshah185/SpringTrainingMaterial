@@ -58,7 +58,7 @@ public class EmployeeController {
         return employeeService.deleteEmployee(id);
     }
 
-    @GetMapping("getEmployeeByDomain/{cDomain}")
+    @GetMapping("filter/coreDomain/{cDomain}")
     public ResponseEntity getEmployeeByCore(@PathVariable("cDomain") String coreDomain){
         return employeeService.getEmployeeByCoreDomain(coreDomain);
     }

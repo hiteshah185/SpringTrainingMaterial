@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +18,10 @@ public class EmployeeService {
     private EmployeeRpo employeeRpo;
     public ResponseEntity newEmployee(Employee newEmployee){
         return new ResponseEntity<Employee>(employeeRpo.save(newEmployee),HttpStatus.CREATED);
+    }
+    @PostConstruct
+    public void init(){
+        System.out.println("Method executed after dependency injection of EmployeeService Class.");
     }
     public ResponseEntity getAllEmployee(){
         return new ResponseEntity(employeeRpo.findAll(),HttpStatus.OK);
